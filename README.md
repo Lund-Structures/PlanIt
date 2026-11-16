@@ -29,7 +29,7 @@
 
 ---
 
-## ![Appointment Form](src/main/resources/images/jet_icon.svg) Quick Start
+## ![Quick Start](src/main/resources/images/jet_icon.svg) Quick Start
 
 ### // Prerequisites
 * **JDK 11+** and **JavaFX SDK 17+**
