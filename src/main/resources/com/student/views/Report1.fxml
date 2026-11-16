@@ -1,0 +1,33 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="400.0" prefWidth="600.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.ReportController1">
+   <children>
+      <ScrollPane fx:id="scrollPane" prefHeight="400.0" prefWidth="600.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <content>
+            <AnchorPane prefHeight="1000.0" prefWidth="585.0">
+               <children>
+                  <Label layoutX="116.0" layoutY="99.0" prefHeight="60.0" prefWidth="354.0" text="Total Customer Appointments By Type/Month" AnchorPane.leftAnchor="116.0" AnchorPane.rightAnchor="115.0" AnchorPane.topAnchor="99.0">
+                     <font>
+                        <Font name="System Bold Italic" size="15.0" />
+                     </font>
+                  </Label>
+                  <TableView fx:id="ReportTable1" layoutX="51.0" layoutY="162.0" prefHeight="950.0" prefWidth="485.0" AnchorPane.bottomAnchor="50.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="50.0" AnchorPane.topAnchor="162.0">
+                    <columns>
+                      <TableColumn fx:id="monthColumn" prefWidth="130.0" text="Month" />
+                      <TableColumn fx:id="typeColumn" prefWidth="234.0" text="Type" />
+                        <TableColumn fx:id="totalColumn" prefWidth="130.0" text="Total" />
+                    </columns>
+                  </TableView>
+               </children>
+            </AnchorPane>
+         </content>
+      </ScrollPane>
+   </children>
+</AnchorPane>

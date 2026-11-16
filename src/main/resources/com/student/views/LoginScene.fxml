@@ -1,0 +1,94 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.PasswordField?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.BorderPane?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.Polyline?>
+<?import javafx.scene.shape.Sphere?>
+<?import javafx.scene.text.Font?>
+<?import javafx.scene.text.Text?>
+<?import javafx.scene.text.TextFlow?>
+
+<AnchorPane maxHeight="-Infinity" maxWidth="-Infinity" minHeight="-Infinity" minWidth="-Infinity" prefHeight="513.0" prefWidth="527.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.LoginController">
+   <children>
+      <Button fx:id="LoginButton" accessibleText="Login Button" defaultButton="true" layoutX="161.0" layoutY="414.0" mnemonicParsing="false" onAction="#attemptLogin" prefHeight="45.0" prefWidth="211.0" style="-fx-background-color: #00a8e8; -fx-text-fill: white; -fx-border-radius: 5px; -fx-background-radius: 5px;" styleClass="hover" text="Login" textAlignment="CENTER" textFill="WHITE" AnchorPane.leftAnchor="161.0" AnchorPane.rightAnchor="155.0" AnchorPane.topAnchor="414.0" />
+      <AnchorPane fx:id="Credentials" layoutX="113.0" layoutY="243.0" prefHeight="150.0" prefWidth="355.0" AnchorPane.leftAnchor="113.0" AnchorPane.rightAnchor="108.0" AnchorPane.topAnchor="243.0">
+         <children>
+            <TextField fx:id="UsernameTextField" accessibleText="UsernameField" layoutX="49.0" layoutY="14.0" onKeyTyped="#hideError" prefHeight="45.0" prefWidth="208.0" promptText="Username" AnchorPane.bottomAnchor="91.0" AnchorPane.leftAnchor="49.0" AnchorPane.rightAnchor="49.0" AnchorPane.topAnchor="14.0" />
+            <PasswordField fx:id="PasswordTextField" accessibleText="PasswordField" layoutX="49.0" layoutY="82.0" onKeyTyped="#hideError" prefHeight="44.0" prefWidth="208.0" promptText="Password" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="49.0" AnchorPane.rightAnchor="49.0" AnchorPane.topAnchor="82.0" />
+            <ImageView fitHeight="45.0" fitWidth="44.0" layoutY="15.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="91.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="262.0" AnchorPane.topAnchor="15.0">
+               <image>
+                  <Image url="@../../../images/person_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" />
+               </image>
+            </ImageView>
+            <ImageView fitHeight="45.0" fitWidth="44.0" layoutY="82.0" pickOnBounds="true" preserveRatio="true" AnchorPane.bottomAnchor="24.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="262.0" AnchorPane.topAnchor="82.0">
+               <image>
+                  <Image url="@../../../images/lock_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" />
+               </image>
+            </ImageView>
+         </children>
+      </AnchorPane>
+      <TextFlow fx:id="LoginErrorPane" layoutX="119.0" layoutY="369.0" prefHeight="55.0" prefWidth="252.0" AnchorPane.bottomAnchor="89.0" AnchorPane.leftAnchor="119.0" AnchorPane.rightAnchor="156.0" AnchorPane.topAnchor="369.0">
+         <children>
+            <Text fx:id="LoginErrorMessage" fill="RED" strokeType="OUTSIDE" strokeWidth="0.0" text="* Invalid username or password" visible="false" wrappingWidth="249.29296875">
+               <font>
+                  <Font size="18.0" />
+               </font>
+            </Text>
+         </children>
+      </TextFlow>
+      <TextFlow fx:id="PlanItTitle" layoutX="138.0" layoutY="130.0" prefHeight="62.0" prefWidth="256.0" textAlignment="CENTER" AnchorPane.leftAnchor="138.0" AnchorPane.rightAnchor="133.0" AnchorPane.topAnchor="130.0">
+         <children>
+            <Text fill="#00a8e8" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="Plan" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial Black" size="32.0" />
+               </font>
+            </Text>
+            <Text fill="#00c49a" layoutX="105.0" layoutY="10.0" stroke="BLACK" strokeType="OUTSIDE" strokeWidth="0.0" text="It" textAlignment="CENTER">
+               <font>
+                  <Font name="Arial Black" size="32.0" />
+               </font>
+            </Text>
+         </children>
+      </TextFlow>
+      <VBox fx:id="WelcomeBox" layoutX="201.0" layoutY="209.0" maxHeight="1.7976931348623157E308" maxWidth="1.7976931348623157E308" prefHeight="37.0" prefWidth="131.0" AnchorPane.leftAnchor="201.0" AnchorPane.rightAnchor="195.0" AnchorPane.topAnchor="209.0">
+         <children>
+            <TextFlow prefHeight="200.0" prefWidth="200.0" textAlignment="CENTER">
+               <children>
+                  <Label fx:id="WelcomeMessage" text="Welcome" textAlignment="CENTER">
+                     <font>
+                        <Font size="18.0" />
+                     </font>
+                  </Label>
+               </children>
+            </TextFlow>
+            <TextFlow prefHeight="200.0" prefWidth="200.0" textAlignment="CENTER">
+               <children>
+                  <Label fx:id="RegionMessage" text="Region: EN" textAlignment="CENTER" />
+               </children>
+            </TextFlow>
+         </children>
+      </VBox>
+      <BorderPane fx:id="LogoPane" layoutX="164.0" layoutY="1.0" prefHeight="138.0" prefWidth="200.0" AnchorPane.leftAnchor="164.0" AnchorPane.rightAnchor="163.0" AnchorPane.topAnchor="1.0">
+         <center>
+            <StackPane prefHeight="150.0" prefWidth="200.0" BorderPane.alignment="CENTER">
+               <children>
+                  <Sphere radius="50" />
+                  <Circle fill="#00a8e8" opacity="0.67" radius="50.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+                  <Polygon fill="#00c49a" points="-80.0, -4.0, 58.0, -80.0, -93.0, -55.0" stroke="#00654f" strokeType="INSIDE" />
+                  <Polyline fill="#00c49a" points="-70.0, -39.0, -63.0, -68.0, 81.0, -115.0, -70.0, -40.0" stroke="#00654f" strokeType="INSIDE" />
+               </children>
+            </StackPane>
+         </center>
+      </BorderPane>
+   </children>
+</AnchorPane>

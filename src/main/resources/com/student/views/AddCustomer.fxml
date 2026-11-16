@@ -1,0 +1,104 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.ComboBox?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.ScrollPane?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane fx:id="RootPane" prefHeight="827.0" prefWidth="535.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.CustomerController">
+         <children>
+            <ScrollPane prefHeight="973.0" prefWidth="535.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+              <content>
+                <AnchorPane maxHeight="1038.0" maxWidth="557.0" minHeight="0.0" minWidth="0.0" prefHeight="909.0" prefWidth="533.0">
+                     <children>
+                        <Separator layoutX="31.0" layoutY="209.0" prefWidth="200.0" AnchorPane.bottomAnchor="697.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" AnchorPane.topAnchor="209.0" />
+                        <Separator layoutX="25.0" layoutY="450.0" prefWidth="200.0" AnchorPane.leftAnchor="25.0" AnchorPane.rightAnchor="25.0" />
+                  <Rectangle arcHeight="5.0" arcWidth="5.0" fill="#ffffff00" height="87.0" layoutX="56.0" layoutY="696.0" opacity="0.8" stroke="#00a8e8" strokeType="OUTSIDE" strokeWidth="5.0" width="434.0" AnchorPane.leftAnchor="51.0" AnchorPane.rightAnchor="38.0" />
+                  <ImageView fx:id="AddCustImg" blendMode="EXCLUSION" fitHeight="73.0" fitWidth="70.0" layoutX="40.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" AnchorPane.leftAnchor="40.0">
+                     <image>
+                        <Image url="@../../../images/person_add_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" />
+                     </image>
+                  </ImageView>
+                  <ImageView fx:id="ModCustImg" blendMode="EXCLUSION" fitHeight="73.0" fitWidth="70.0" layoutX="39.0" layoutY="25.0" pickOnBounds="true" preserveRatio="true" visible="false">
+                     <image>
+                        <Image url="@../../../images/manage_accounts_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" />
+                     </image>
+                  </ImageView>
+                  <Label fx:id="AddCustLabel" alignment="TOP_CENTER" contentDisplay="TOP" graphicTextGap="14.0" layoutX="94.0" layoutY="50.0" lineSpacing="14.0" prefHeight="58.0" prefWidth="325.0" text="Add  Customer" textAlignment="CENTER">
+                     <font>
+                        <Font name="System Bold" size="40.0" />
+                     </font>
+                  </Label>
+                  <Label fx:id="ModCustLabel" alignment="TOP_LEFT" contentDisplay="TOP" graphicTextGap="14.0" layoutX="113.0" layoutY="50.0" lineSpacing="14.0" prefHeight="58.0" prefWidth="381.0" text="Modify  Customer" textAlignment="CENTER" visible="false">
+                     <font>
+                        <Font name="System Bold" size="40.0" />
+                     </font>
+                  </Label>
+                        <Label fx:id="IDLabel" layoutX="121.0" layoutY="149.0" text="Customer ID" AnchorPane.leftAnchor="121.0" AnchorPane.rightAnchor="301.0" AnchorPane.topAnchor="149.0">
+                           <font>
+                              <Font size="20.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="40.0" layoutY="240.0" text="Details" AnchorPane.leftAnchor="40.0">
+                           <font>
+                              <Font name="System Bold" size="21.0" />
+                           </font>
+                        </Label>
+                  <Label layoutX="50.0" layoutY="293.0" text="Name" AnchorPane.leftAnchor="50.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                        <Label layoutX="50.0" layoutY="368.0" text="Phone Number" AnchorPane.leftAnchor="50.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="40.0" layoutY="481.0" text="Location">
+                           <font>
+                              <Font name="System Bold" size="21.0" />
+                           </font>
+                        </Label>
+                        <Label layoutX="50.0" layoutY="533.0" text="Address" AnchorPane.leftAnchor="50.0">
+                           <font>
+                              <Font size="14.0" />
+                           </font>
+                        </Label>
+                  <Label layoutX="332.0" layoutY="533.0" text="Postal Code">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="50.0" layoutY="608.0" text="Country " AnchorPane.leftAnchor="50.0">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                  <Label layoutX="288.0" layoutY="608.0" text="State / Province">
+                     <font>
+                        <Font size="14.0" />
+                     </font>
+                  </Label>
+                        <TextField fx:id="IDField" disable="true" editable="false" layoutX="243.0" layoutY="147.0" prefHeight="35.0" prefWidth="124.0" text="Auto Gen." />
+                        <TextField fx:id="NameField" layoutX="50.0" layoutY="313.0" prefHeight="35.0" prefWidth="195.0" promptText="Customer Name" AnchorPane.leftAnchor="50.0" />
+                        <TextField fx:id="PhoneField" layoutX="50.0" layoutY="388.0" prefHeight="35.0" prefWidth="195.0" promptText="#" AnchorPane.leftAnchor="50.0" />
+                        <TextField fx:id="AddressField" layoutX="46.0" layoutY="553.0" prefHeight="35.0" prefWidth="268.0" promptText="123 Faxe Street" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="215.0" />
+                  <TextField fx:id="PostalField" layoutX="331.0" layoutY="553.0" prefHeight="35.0" prefWidth="152.0" promptText="#" AnchorPane.leftAnchor="331.0" AnchorPane.rightAnchor="50.0" />
+                        <ComboBox fx:id="CountryField" layoutX="46.0" layoutY="628.0" onAction="#setDivisionBox" prefHeight="35.0" prefWidth="223.0" AnchorPane.leftAnchor="50.0" AnchorPane.rightAnchor="260.0" />
+                        <ComboBox fx:id="StateField" layoutX="310.0" layoutY="628.0" prefHeight="35.0" prefWidth="195.0" visibleRowCount="100" AnchorPane.rightAnchor="50.0" />
+                        <Button fx:id="AddCustButton" layoutX="100.0" layoutY="719.0" mnemonicParsing="false" onAction="#submitCustomer" prefHeight="41.0" prefWidth="145.0" style="-fx-background-color: #00a8e8;" text="Submit" textFill="WHITE" />
+                  <Button fx:id="ModCustButton" layoutX="100.0" layoutY="719.0" mnemonicParsing="false" onAction="#modifyCustomer" prefHeight="41.0" prefWidth="145.0" style="-fx-background-color: #00a8e8;" text="Submit" textFill="WHITE" visible="false" />
+                  <Button fx:id="CancelButton" cancelButton="true" layoutX="310.0" layoutY="719.0" mnemonicParsing="false" onAction="#cancelCustomer" prefHeight="41.0" prefWidth="145.0" style="-fx-background-color: #ff0000;" text="Cancel" textFill="WHITE" />
+                     </children>
+                  </AnchorPane>
+              </content>
+            </ScrollPane>
+         </children>
+      </AnchorPane>

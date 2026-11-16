@@ -1,0 +1,374 @@
+<?xml version="1.0" encoding="UTF-8"?>
+
+<?import javafx.geometry.Insets?>
+<?import javafx.scene.control.Button?>
+<?import javafx.scene.control.Label?>
+<?import javafx.scene.control.Separator?>
+<?import javafx.scene.control.TableColumn?>
+<?import javafx.scene.control.TableView?>
+<?import javafx.scene.control.TextField?>
+<?import javafx.scene.image.Image?>
+<?import javafx.scene.image.ImageView?>
+<?import javafx.scene.layout.AnchorPane?>
+<?import javafx.scene.layout.HBox?>
+<?import javafx.scene.layout.StackPane?>
+<?import javafx.scene.layout.VBox?>
+<?import javafx.scene.shape.Circle?>
+<?import javafx.scene.shape.Polygon?>
+<?import javafx.scene.shape.Polyline?>
+<?import javafx.scene.shape.Rectangle?>
+<?import javafx.scene.shape.Sphere?>
+<?import javafx.scene.text.Font?>
+
+<AnchorPane prefHeight="800.0" prefWidth="1280.0" xmlns="http://javafx.com/javafx/23" xmlns:fx="http://javafx.com/fxml/1" fx:controller="controller.MainMenuController">
+   <children>
+      <HBox fx:id="CustomerButtons" layoutX="116.0" layoutY="202.0" prefHeight="50.0" prefWidth="1150.0" AnchorPane.bottomAnchor="575.0" AnchorPane.leftAnchor="115.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="200.0">
+         <children>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/search_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" />
+               </image>
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+            </ImageView>
+            <TextField fx:id="CustomerSearch" accessibleText="Customer Search" onKeyTyped="#startCustSearch" prefHeight="30.0" prefWidth="216.0" promptText="Search">
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+            </TextField>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/person_add_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="85.0" top="10.0" />
+               </HBox.margin>
+            </ImageView>
+            <Button fx:id="addCustButton" minHeight="30.0" mnemonicParsing="false" onAction="#addCustLaunch" prefHeight="30.0" text="Add Customer">
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+            </Button>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/manage_accounts_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="30.0" top="10.0" />
+               </HBox.margin>
+            </ImageView>
+            <Button fx:id="modCustButton" mnemonicParsing="false" onAction="#modCustLaunch" prefHeight="30.0" prefWidth="108.0" text="Modify Customer">
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+            </Button>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/person_remove_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="30.0" top="10.0" />
+               </HBox.margin>
+            </ImageView>
+            <Button fx:id="delCustButton" mnemonicParsing="false" onAction="#delCustLaunch" prefHeight="30.0" text="Delete Customer">
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <HBox fx:id="AppointmentButtons" layoutX="115.0" layoutY="200.0" prefHeight="52.0" prefWidth="1150.0" visible="false" AnchorPane.bottomAnchor="575.0" AnchorPane.leftAnchor="115.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="200.0">
+         <children>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/search_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" />
+               </image>
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+            </ImageView>
+            <TextField fx:id="AppointmentSearch" accessibleText="Appointment Search" onKeyTyped="#startAppSearch" prefHeight="30.0" prefWidth="216.0" promptText="Search">
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+            </TextField>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/calendar_add_on_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="85.0" top="10.0" />
+               </HBox.margin>
+            </ImageView>
+            <Button fx:id="AddAppointmentButton" minHeight="30.0" mnemonicParsing="false" onAction="#addAppLaunch" prefHeight="30.0" text="Add Appointment">
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+            </Button>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/edit_calendar_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="30.0" top="10.0" />
+               </HBox.margin>
+            </ImageView>
+            <Button fx:id="ModAppointmentButton" mnemonicParsing="false" onAction="#modAppLaunch" prefHeight="30.0" prefWidth="132.0" text="Modify Appointment">
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+            </Button>
+            <ImageView fitHeight="30.0" fitWidth="30.0" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/event_busy_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" />
+               </image>
+               <HBox.margin>
+                  <Insets left="30.0" top="10.0" />
+               </HBox.margin>
+            </ImageView>
+            <Button fx:id="DelAppointmentButton" mnemonicParsing="false" onAction="#delAppLaunch" prefHeight="30.0" text="Delete Appointment">
+               <HBox.margin>
+                  <Insets top="10.0" />
+               </HBox.margin>
+            </Button>
+         </children>
+      </HBox>
+      <VBox fx:id="NavigationBar" alignment="CENTER" layoutY="-1.0" prefHeight="800.0" prefWidth="100.0" style="-fx-background-color: #00a8e8;" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <ImageView fx:id="UserImg" fitHeight="188.0" fitWidth="52.0" onMouseClicked="#userCardLaunch" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+               <image>
+                  <Image url="@../../../images/account_circle_24dp_E3E3E3.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="UserLabel" onMouseClicked="#userCardLaunch" prefHeight="17.0" prefWidth="33.0" text="User" VBox.vgrow="NEVER">
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
+            </Label>
+            <Separator prefWidth="200.0">
+               <VBox.margin>
+                  <Insets left="15.0" right="15.0" />
+               </VBox.margin>
+            </Separator>
+            <ImageView fx:id="AppointmentsImg" fitHeight="89.0" fitWidth="52.0" layoutX="10.0" layoutY="10.0" onMouseClicked="#allAppView" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets top="90.0" />
+               </VBox.margin>
+               <image>
+                  <Image url="@../../../images/calendar_month_24dp_E3E3E3.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="AppointmentLabel" onMouseClicked="#allAppView" text="Appointments">
+               <VBox.margin>
+                  <Insets bottom="80.0" />
+               </VBox.margin>
+            </Label>
+            <ImageView fx:id="CustomerImg" fitHeight="89.0" fitWidth="52.0" layoutX="10.0" layoutY="119.0" onMouseClicked="#allCustView" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets />
+               </VBox.margin>
+               <image>
+                  <Image url="@../../../images/groups_24dp_E3E3E3.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="CustomerLabel" layoutX="10.0" layoutY="208.0" onMouseClicked="#allCustView" text="Customers">
+               <VBox.margin>
+                  <Insets bottom="80.0" />
+               </VBox.margin>
+            </Label>
+            <ImageView fx:id="ReportsImg" fitHeight="89.0" fitWidth="52.0" layoutX="10.0" layoutY="225.0" onMouseClicked="#allReportsView" pickOnBounds="true" preserveRatio="true">
+               <image>
+                  <Image url="@../../../images/insights_24dp_E3E3E3.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="ReportsLabel" layoutX="10.0" layoutY="314.0" onMouseClicked="#allReportsView" text="Reports">
+               <VBox.margin>
+                  <Insets bottom="90.0" />
+               </VBox.margin>
+            </Label>
+            <Separator layoutX="25.0" layoutY="116.0" prefWidth="200.0">
+               <padding>
+                  <Insets left="15.0" right="15.0" />
+               </padding>
+            </Separator>
+            <ImageView fx:id="LogoutImg" fitHeight="89.0" fitWidth="52.0" layoutX="10.0" layoutY="700.0" onMouseClicked="#confirmLogout" pickOnBounds="true" preserveRatio="true">
+               <VBox.margin>
+                  <Insets top="15.0" />
+               </VBox.margin>
+               <image>
+                  <Image url="@../../../images/logout_24dp_E3E3E3_FILL0_wght400_GRAD0_opsz24.png" />
+               </image>
+            </ImageView>
+            <Label fx:id="LogoutLabel" layoutX="20.0" layoutY="80.0" onMouseClicked="#confirmLogout" prefHeight="17.0" prefWidth="45.0" text="Logout">
+               <VBox.margin>
+                  <Insets bottom="15.0" />
+               </VBox.margin>
+            </Label>
+         </children>
+      </VBox>
+      <AnchorPane fx:id="AppointmentPane" layoutX="110.0" prefHeight="200.0" prefWidth="1180.0" AnchorPane.leftAnchor="99.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="AllLabel" layoutX="70.0" layoutY="24.0" prefHeight="91.0" prefWidth="468.0" text="All Appointments" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="689.0" AnchorPane.topAnchor="24.0">
+               <font>
+                  <Font name="Verdana Bold" size="35.0" />
+               </font>
+            </Label>
+            <Label fx:id="WeeklyLabel" layoutX="14.0" layoutY="14.0" prefHeight="91.0" prefWidth="468.0" text="Weekly Appointments" visible="false" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="643.0" AnchorPane.topAnchor="24.0">
+               <font>
+                  <Font name="Verdana Bold" size="35.0" />
+               </font>
+            </Label>
+            <Label fx:id="MonthlyLabel" layoutX="24.0" layoutY="24.0" prefHeight="91.0" prefWidth="513.0" text="Monthly Appointments" visible="false" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="598.0" AnchorPane.topAnchor="24.0">
+               <font>
+                  <Font name="Verdana Bold" size="35.0" />
+               </font>
+            </Label>
+            <Separator layoutX="228.0" layoutY="165.0" prefHeight="1.0" prefWidth="953.0" style="-fx-background-color: #000000;" AnchorPane.leftAnchor="228.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="160.0" />
+            <HBox fx:id="AppointmentTabs" layoutX="262.0" layoutY="101.0" prefHeight="65.0" prefWidth="918.0" AnchorPane.leftAnchor="262.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="101.0">
+               <children>
+                  <Label fx:id="allLabelTab" onMouseClicked="#allAppView" prefHeight="65.0" prefWidth="267.0" text="All Appointments" textAlignment="JUSTIFY">
+                     <font>
+                        <Font name="Verdana" size="30.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="65.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="weeklyLabelTab" onMouseClicked="#weeklyAppView" prefHeight="65.0" prefWidth="125.0" text="Weekly" textAlignment="CENTER">
+                     <font>
+                        <Font name="Verdana" size="30.0" />
+                     </font>
+                     <HBox.margin>
+                        <Insets right="65.0" />
+                     </HBox.margin>
+                  </Label>
+                  <Label fx:id="monthlyLabelTab" onMouseClicked="#monthlyAppView" prefHeight="65.0" prefWidth="142.0" text="Monthly" textAlignment="CENTER">
+                     <font>
+                        <Font name="Verdana" size="30.0" />
+                     </font>
+                  </Label>
+               </children>
+            </HBox>
+            <HBox fx:id="TabHighlight" layoutX="251.0" layoutY="146.0" prefHeight="15.0" prefWidth="933.0" AnchorPane.leftAnchor="251.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="155.0">
+               <children>
+                  <Rectangle fx:id="AllHighlight" arcHeight="20.0" arcWidth="20.0" fill="#00c49a" height="15.0" stroke="#09ddaf" strokeWidth="0.0" width="269.0">
+                     <HBox.margin>
+                        <Insets right="65.0" />
+                     </HBox.margin>
+                  </Rectangle>
+                  <Rectangle fx:id="WeeklyHighlight" arcHeight="20.0" arcWidth="20.0" fill="#00c49a" height="15.0" stroke="#00c49a" strokeType="INSIDE" strokeWidth="0.0" visible="false" width="127.0">
+                     <HBox.margin>
+                        <Insets right="65.0" />
+                     </HBox.margin>
+                  </Rectangle>
+                  <Rectangle fx:id="MonthlyHighlight" arcHeight="20.0" arcWidth="20.0" fill="#00c49a" height="15.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" visible="false" width="132.0" />
+               </children>
+            </HBox>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="CustomerTopPane" layoutX="97.0" prefHeight="200.0" prefWidth="1180.0" visible="false" AnchorPane.bottomAnchor="625.0" AnchorPane.leftAnchor="99.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Label fx:id="AllCustomersLabel" layoutX="24.0" layoutY="24.0" prefHeight="91.0" prefWidth="468.0" text="All Customers" textAlignment="CENTER" AnchorPane.bottomAnchor="85.0" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="689.0" AnchorPane.topAnchor="24.0">
+               <font>
+                  <Font name="Verdana Bold" size="35.0" />
+               </font>
+            </Label>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="CustomerView" layoutX="99.0" layoutY="250.0" prefHeight="577.0" prefWidth="1180.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="250.0">
+         <children>
+            <TableView fx:id="CustomerTable" layoutX="458.0" layoutY="2.0" onMouseClicked="#rowSelectionCustomer" prefHeight="560.0" prefWidth="1150.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="0.0">
+              <columns>
+                <TableColumn fx:id="customerIDCol" prefWidth="100.0" text="Customer_ID" />
+                <TableColumn fx:id="customerNameCol" prefWidth="176.0" text="Customer_Name" />
+                  <TableColumn fx:id="customerAddressCol" prefWidth="224.0" text="Address" />
+                  <TableColumn fx:id="customerPhoneCol" prefWidth="238.0" text="Phone" />
+                  <TableColumn fx:id="customerZipCol" prefWidth="88.0" text="Postal_Code" />
+                  <TableColumn fx:id="customerCountryCol" prefWidth="152.0" text="Country" />
+                  <TableColumn fx:id="customerDivisionCol" prefWidth="171.0" text="Division" />
+              </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="AllAppView" layoutX="110.0" layoutY="250.0" prefHeight="577.0" prefWidth="1180.0" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="250.0">
+         <children>
+            <TableView fx:id="AllAppointmentsTable" layoutX="25.0" layoutY="60.0" onMouseClicked="#rowSelection" prefHeight="525.0" prefWidth="1150.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="0.0">
+               <columns>
+                  <TableColumn fx:id="idColumn" prefWidth="101.0" text="Appointment_ID" />
+                  <TableColumn fx:id="titleColumn" prefWidth="115.0" text="Title" />
+                  <TableColumn fx:id="descriptionColumn" prefWidth="115.0" text="Description" />
+                  <TableColumn fx:id="locationColumn" prefWidth="115.0" text="Location" />
+                  <TableColumn fx:id="contactColumn" prefWidth="51.0" text="Contact" />
+                  <TableColumn fx:id="typeColumn" prefWidth="151.0" text="Type" />
+                  <TableColumn fx:id="startColumn" prefWidth="184.0" text="Start Date/Time" />
+                  <TableColumn fx:id="endColumn" prefWidth="174.0" text="End Date/Time" />
+                  <TableColumn fx:id="customerColumn" minWidth="0.0" prefWidth="76.0" text="Customer_ID" />
+                  <TableColumn fx:id="userColumn" minWidth="0.0" prefWidth="77.0" text="User_ID" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="WeeklyView" layoutX="120.0" layoutY="222.0" prefHeight="605.0" prefWidth="1187.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="250.0">
+         <children>
+            <TableView fx:id="WeeklyTable" layoutX="10.0" layoutY="10.0" onMouseClicked="#rowSelectionWeekly" prefHeight="525.0" prefWidth="1150.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="0.0">
+               <columns>
+                  <TableColumn fx:id="weekIDCol" prefWidth="101.0" text="Appointment_ID" />
+                  <TableColumn fx:id="weekTitleCol" prefWidth="115.0" text="Title" />
+                  <TableColumn fx:id="weekDescriptionCol" prefWidth="115.0" text="Description" />
+                  <TableColumn fx:id="weekLocationCol" prefWidth="115.0" text="Location" />
+                  <TableColumn fx:id="weekContactCol" prefWidth="51.0" text="Contact" />
+                  <TableColumn fx:id="weekTypeCol" minWidth="0.0" prefWidth="151.0" text="Type" />
+                  <TableColumn fx:id="weekStartCol" prefWidth="175.0" text="Start Date/Time" />
+                  <TableColumn fx:id="weekEndCol" prefWidth="175.0" text="End Date/Time" />
+                  <TableColumn fx:id="weekCustomerCol" prefWidth="77.0" text="Customer_ID" />
+                  <TableColumn fx:id="weekUserCol" minWidth="0.0" prefWidth="77.0" text="User_ID" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="MonthlyView" layoutX="130.0" layoutY="232.0" prefHeight="605.0" prefWidth="1187.0" visible="false" AnchorPane.bottomAnchor="0.0" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="250.0">
+         <children>
+            <TableView fx:id="MonthlyTable" onMouseClicked="#rowSelectionMonthly" prefHeight="525.0" prefWidth="1150.0" AnchorPane.bottomAnchor="15.0" AnchorPane.leftAnchor="15.0" AnchorPane.rightAnchor="15.0" AnchorPane.topAnchor="0.0">
+               <columns>
+                  <TableColumn fx:id="monthIDCol" prefWidth="101.0" text="Appointment_ID" />
+                  <TableColumn fx:id="monthTitleCol" prefWidth="115.0" text="Title" />
+                  <TableColumn fx:id="monthDescriptionCol" prefWidth="115.0" text="Description" />
+                  <TableColumn fx:id="monthLocationCol" prefWidth="115.0" text="Location" />
+                  <TableColumn fx:id="monthContactCol" minWidth="0.0" prefWidth="68.0" text="Contact_ID" />
+                  <TableColumn fx:id="monthTypeCol" minWidth="0.0" prefWidth="151.0" text="Type" />
+                  <TableColumn fx:id="monthStartCol" prefWidth="170.0" text="Start Date/Time" />
+                  <TableColumn fx:id="monthEndCol" prefWidth="170.0" text="End Date/Time" />
+                  <TableColumn fx:id="monthCustomerCol" text="Customer_ID" />
+                  <TableColumn fx:id="monthUserCol" minWidth="0.0" prefWidth="74.0" text="User_ID" />
+               </columns>
+            </TableView>
+         </children>
+      </AnchorPane>
+      <AnchorPane fx:id="ReportsView" layoutX="110.0" prefHeight="800.0" prefWidth="1180.0" visible="false" AnchorPane.leftAnchor="100.0" AnchorPane.rightAnchor="0.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Button fx:id="report1" layoutX="60.0" layoutY="125.0" mnemonicParsing="false" onAction="#launchReport1" prefHeight="250.0" prefWidth="250.0" text="Total Customer Appointments" AnchorPane.leftAnchor="109.0" AnchorPane.topAnchor="275.0" />
+            <Button fx:id="report3" mnemonicParsing="false" onAction="#launchReport3" prefHeight="250.0" prefWidth="250.0" text="Customer Distribution" AnchorPane.leftAnchor="827.0" AnchorPane.topAnchor="275.0" />
+            <Button fx:id="report2" layoutX="465.0" layoutY="275.0" mnemonicParsing="false" onAction="#launchReport2" prefHeight="250.0" prefWidth="250.0" text="Contact Schedules" />
+            <Label fx:id="ReportsLabel" prefHeight="91.0" prefWidth="468.0" text="Reports" AnchorPane.leftAnchor="24.0" AnchorPane.rightAnchor="689.0" AnchorPane.topAnchor="24.0">
+               <font>
+                  <Font name="Verdana Bold" size="35.0" />
+               </font>
+            </Label>
+            <Separator orientation="VERTICAL" prefHeight="800.0" prefWidth="1.0" />
+            <Separator prefWidth="200.0" />
+         </children>
+      </AnchorPane>
+      <StackPane layoutX="1100.0" prefHeight="162.0" prefWidth="151.0" AnchorPane.rightAnchor="29.0" AnchorPane.topAnchor="0.0">
+         <children>
+            <Sphere radius="50" />
+            <Circle fill="#00a8e8" opacity="0.67" radius="50.0" stroke="BLACK" strokeType="INSIDE" strokeWidth="0.0" />
+            <Polygon fill="#00c49a" points="-80.0, -4.0, 58.0, -80.0, -93.0, -55.0" stroke="#00654f" strokeType="INSIDE" />
+            <Polyline fill="#00c49a" points="-70.0, -39.0, -63.0, -68.0, 81.0, -115.0, -70.0, -40.0" stroke="#00654f" strokeType="INSIDE" />
+         </children>
+      </StackPane>
+   </children>
+</AnchorPane>
